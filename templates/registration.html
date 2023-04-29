@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head>
+
+    <meta charset="utf-8">
+    <title>registration</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/checkout/">
+    <link rel="stylesheet" type="text/css" href="static/css/style2.css"/>
+<link href="/static/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+    <!-- Favicons -->
+<link rel="apple-touch-icon" href="/docs/5.3/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="mask-icon" href="/docs/5.3/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+<link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico">
+<meta name="theme-color" content="#712cf9">
+<script type="text/javascript" src="static/js/jquery.js"></script>
+    <!-- Custom styles for this template -->
+  </head>
+  <body class="text-white bg-dark">
+<div class="container px-4 text-center">
+  <main>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="py-5 text-center">
+      <h2>Registration form</h2>
+    </div>
+
+    <div class="row gx-5 text-start">
+      <div class="col">
+
+        <form class="needs-validation" method="post" enctype="multipart/form-data" action="" novalidate>
+          <div class="row g-3">
+            <div class="col-sm-3">
+              <label for="firstName" class="form-label">First name</label>
+              <input name="firstName" type="text" class="form-control" id="firstName" placeholder="" value="" required>
+              <div class="invalid-feedback">
+                Valid first name is required.
+              </div>
+            </div>
+
+            <div class="col-sm-3">
+              <label for="lastName" class="form-label">Last name</label>
+              <input name="lastName" type="text" class="form-control" id="lastName" placeholder="" value="" required>
+              <div class="invalid-feedback">
+                Valid last name is required.
+              </div>
+            </div>
+              <div class="col-sm-3">
+              <div class="form-group">
+                                        <label for="photo">choose avatar photo</label>
+                                        <input type="file" class="form-control-file" id="photo" name="file">
+                                    </div>
+<!--                  <form method="post" enctype="multipart/form-data">-->
+<!--                               <div class="form-group">-->
+<!--                                    <label for="photo">Выберите файл</label>-->
+<!--                                    <input type="file" class="form-control-file" id="photo" name="file">-->
+<!--                                </div>-->
+<!--                                <button type="submit" class="btn btn-primary">Отправить</button>-->
+<!--                            </form>-->
+              </div>
+
+            <div class="col-12">
+              <label for="telephone_number" class="form-label">Telephone number</label>
+              <div class="input-group has-validation">
+                <span class="input-group-text">+7</span>
+                <input name="telephone_number" type="text" class="form-control" id="telephone_number" required>
+              <div class="invalid-feedback">
+                  Your username is required.
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="email" class="form-label">Email <span class="text-body-secondary"></span></label>
+              <input name="email" type="email" class="form-control" id="email" placeholder="you@example.com">
+              <div class="invalid-feedback">
+                Please enter a valid email address for shipping updates.
+              </div>
+            </div>
+
+            <div class="col-12">
+<!--              {% if password != "" %}-->
+              <label for="password1" class="form-label">Password</label>
+              <input name="password1" type="text" class="form-control" id="password1" value="{{password}}"required>
+              <div class="invalid-feedback">
+                Please enter your shipping address.
+              </div>
+            </div>
+<!--{% endif %}-->
+
+            <div class="col-12">
+              <label for="password2" class="form-label">Password one more time<span class="text-body-secondary"></span></label>
+              <input name="password2" type="text" class="form-control" id="password2">
+            </div>
+
+
+          <hr class="my-4">
+          <input name="submit" type="submit" class="btn btn-lg btn-primary" value='Done' id="submit">
+          </div>
+        </form>
+      </div>
+    </div>
+      <div>
+
+
+                            </div>
+  </main>
+</div>
+  <div class="py-5 text-center">
+<a type="button" class="btn btn-outline-primary btn-lg" href="/">Back</a>
+<!--    <a type="button" class="btn btn-outline-primary btn-lg " href="" >random password</a>-->
+      <input name="submit" type="submit" class="btn btn-lg btn-primary link" value='random password' id="link">
+</div>
+  <script>
+        $(document).ready(function(){
+            $("#link").click(function(){
+            $.get( "random_password", function( data ) {
+                $("#password1").val(data);
+            });
+        });
+    });
+    </script>
+  </body>
+
+</html>
