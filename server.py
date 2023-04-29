@@ -80,7 +80,7 @@ def registration():
         # обязательно приложить фоторгафию
         if photo:
             user.photo = photo.filename
-            photo.save(os.path.join('../vikulaakula22/static/new_files', photo.filename))
+            photo.save(os.path.join('static/new_files', photo.filename))
             db_sess.add(user)
             db_sess.commit()
             login_user(user, remember=True)
